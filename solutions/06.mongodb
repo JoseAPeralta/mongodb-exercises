@@ -1,0 +1,3 @@
+use("myrestaurants");
+
+db.restaurants.find({ borough: "Bronx" }).limit(5);
