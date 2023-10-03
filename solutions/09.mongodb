@@ -1,0 +1,24 @@
+use("myrestaurants");
+
+db.restaurants.find({
+    grades: { 
+        $elemMatch: {
+            $and: [
+                { score: {$gt:80} },
+                { score: {$lt: 100} }
+            ]
+        }
+    }
+})
+
+
+// w3c solution
+use("myrestaurants");
+
+db.restaurants.find({
+    grades: { 
+        $elemMatch: {
+            score: {$gt: 80, $lt:100}
+        }
+    }
+})
